@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<virtualType name="Mourya\Shopfinder\Model\ResourceModel\Shops\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">mourya_shops</argument>
+			<argument name="resourceModel" xsi:type="string">Mourya\Shopfinder\Model\ResourceModel\Shops\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="mourya_shops_grid_data_source" xsi:type="string">Mourya\Shopfinder\Model\ResourceModel\Shops\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Mourya\Shopfinder\Api\ShopsRepositoryInterface" type="Mourya\Shopfinder\Model\ShopsRepository"/>
+	<preference for="Mourya\Shopfinder\Api\Data\ShopsInterface" type="Mourya\Shopfinder\Model\Shops"/>
+	<preference for="Mourya\Shopfinder\Api\Data\ShopsSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>

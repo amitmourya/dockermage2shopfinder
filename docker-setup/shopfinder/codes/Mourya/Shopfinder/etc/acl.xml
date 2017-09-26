@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Mourya_Shopfinder::shops" sortOrder="10" title="shops">
+					<resource id="Mourya_Shopfinder::shops_save" sortOrder="10" title="Save shop"/>
+					<resource id="Mourya_Shopfinder::shops_delete" sortOrder="20" title="Delete shop"/>
+					<resource id="Mourya_Shopfinder::shops_update" sortOrder="30" title="Update shop"/>
+					<resource id="Mourya_Shopfinder::shops_view" sortOrder="40" title="View shop"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

@@ -1,0 +1,14 @@
+version: '2'
+services:
+    magento2:
+        build: ./docker-setup
+        volumes:
+            - ./mysqldata:/var/lib/mysql
+            - ./code:/var/www/html
+        ports:
+            - 80:80
+        environment:
+            - MAGENTO_BASE_URL=${MAGENTO_BASE_URL}
+            - MYSQL_DATABASE=magento2
+            - MYSQL_USER=magento2
+            - MYSQL_PASSWORD=magento2
